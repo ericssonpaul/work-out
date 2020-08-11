@@ -2,7 +2,7 @@
 
 Work-Out is a Vue.js CRUD app for recommending different training exercises
 
-## Build Setup
+## Building
 
 ``` bash
 # install dependencies

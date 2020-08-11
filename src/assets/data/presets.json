@@ -1,0 +1,40 @@
+{
+  "presets": [
+    {
+      "name": "Tennis"
+    },
+    {
+      "name": "Football"
+    },
+    {
+      "name": "Sprinting"
+    },
+    {
+      "name": "Golf"
+    },
+    {
+      "name": "Basketball"
+    },
+    {
+      "name": "Field Hockey"
+    },
+    {
+      "name": "Cricket"
+    },
+    {
+      "name": "Volleyball"
+    },
+    {
+      "name": "Table Tennis"
+    },
+    {
+      "name": "Boxing"
+    },
+    {
+      "name": "Rugby"
+    },
+    {
+      "name": "Skiing"
+    }
+  ]
+}

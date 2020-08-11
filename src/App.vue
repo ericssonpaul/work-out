@@ -1,24 +1,45 @@
 <template>
   <div id="app">
-    <header>
-      <span><b><i>Work-Out</i></b></span>
-    </header>
+    <!-- Title navbar -->
+    <navbar></navbar>
     <main>
-      <!-- <img src="./assets/runner.svg" alt="Work-Out"> -->
-      <router-view></router-view>
-      <div class="footer">
-        <ul>
-          <li><p>© 2020 Jacob Paul</p></li>
-          <li><a href="https://github.com/ericssonpaul/work-out" target="_blank" rel="noopener"><p>Code on GitHub</p></a></li>
-        </ul>
-      </div>
+      <!-- The main content, defined by 'contentComponent' and changed as needed -->
+      <transition appear name="fade">
+        <component v-bind:is="contentComponent" @cc-update="updateContentComponent"></component>
+      </transition>
+      <!-- Footer (CC 2020, GitHub etc) -->
+      <footersm></footersm>
     </main>
   </div>
 </template>
 
 <script>
+// Here are the primary content components (those that 'contentComponent' can be set to)
+import welcome from './components/welcome'
+
+// Generic components
+import navbar from './components/navbar'
+import footersm from './components/footersm'
+
 export default {
-  name: 'app'
+  name: 'app',
+  data () {
+    return {
+      contentComponent: 'welcome' // The welcome screen is our initial component
+    }
+  },
+  components: {
+    welcome,
+    navbar,
+    footersm
+  },
+  methods: {
+    // Invoked by the current content component to change the primary content.
+    // For example, the welcome component calls this function when the user presses on one of the buttons
+    updateContentComponent: function (value) {
+      this.contentComponent = value
+    }
+  }
 }
 </script>
 
@@ -28,7 +49,7 @@ html {
 }
 body {
   margin: 0;
-  height: calc(100% - 65px);
+  height: 100%;
   padding: 0;
 }
 
@@ -39,45 +60,31 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: #ffffff;
 }
-a, p {
-  color: #ffffff;
-}
 
 main {
   text-align: center;
   margin-top: 0px;
-  height: 100%;
+  height: calc(100% - 65px);
   background: rgb(24,209,0);
   background: linear-gradient(90deg, rgba(24,209,0,1) 0%, rgba(0,212,255,1) 100%);
 }
 
-header {
-  margin: 0;
-  height: 65px;
-  background: rgb(24,209,0);
-  background: linear-gradient(90deg, rgba(24,209,0,1) 0%, rgba(0,212,255,1) 100%);
-  color: #ffffff;
+.fade-enter-active {
+  transition: opacity 0.5s ease-in-out;
 }
-
-header span {
-  display: block;
-  position: relative;
-  font-size: 25px;
-  line-height: 1;
-  letter-spacing: .02em;
-  font-weight: 400;
-  box-sizing: border-box;
-  padding-top: 25px;
-  padding-bottom: 15px;
-  padding-left: 20px;
-  border-style: none none solid none;
-  border-bottom-color: #ffffff;
-  border-width: thin;
+.fade-enter-to {
+  opacity: 1;
 }
-
-.footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+.fade-enter {
+  opacity: 0;
+}
+.fade-leave-active {
+  transition: opacity 0.3s ease-in-out;
+}
+.fade-leave-to {
+  opacity: 0;
+}
+.fade-leave {
+  opacity: 1;
 }
 </style>
