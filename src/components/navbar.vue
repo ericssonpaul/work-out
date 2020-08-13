@@ -1,14 +1,19 @@
 <template>
   <div id="navbar">
     <header>
-      <a href="/"><b><i>Work-Out</i></b></a>
+      <a href="/"><b><i>{{ title }}</i></b></a>
     </header>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'navbar'
+  name: 'navbar',
+  data () {
+    return {
+      title: 'Work-Out'
+    }
+  }
 }
 </script>
 

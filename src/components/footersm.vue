@@ -1,7 +1,7 @@
 <template>
   <div id="footersm">
       <ul>
-        <li><p>© {{ year }} {{ name }}</p></li>
+        <li><p>© {{ year }} {{ name }} ({{ license }})</p></li>
         <li><a :href="github_link" target="_blank" rel="noopener"><p>{{ github_caption }}</p></a></li>
       </ul>
   </div>
@@ -14,6 +14,7 @@ export default {
     return {
       year: '2020',
       name: 'Jacob Paul',
+      license: 'MIT',
       github_link: 'https://github.com/ericssonpaul/work-out',
       github_caption: 'Code on GitHub'
     }
@@ -37,5 +38,10 @@ a, p {
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+@media screen and (max-height: 629px) {
+  #footersm {
+    opacity: 0;
+  }
 }
 </style>

@@ -1,3 +1,90 @@
 {
-  
+  "muscles": [
+    "triceps",
+    "biceps",
+    "forearms",
+    "shoulders",
+    "back",
+    "chest",
+    "abs",
+    "glutes",
+    "quads",
+    "hipflexors",
+    "hamstrings",
+    "calves"
+  ],
+  "stretches": [
+    {
+      "name": "Overhead triceps stretch",
+      "time": 50,
+      "equipment": false,
+      "muscles": ["triceps"]
+    },
+    {
+      "name": "Standing biceps stretch",
+      "time": 30,
+      "equipment": false,
+      "muscles": ["biceps"]
+    },
+    {
+      "name": "Alternating wrist pull",
+      "time": 40,
+      "equipment": false,
+      "muscles": ["forearms"]
+    },
+    {
+      "name": "Cross-body shoulder stretch",
+      "time": 50,
+      "equipment": false,
+      "muscles": ["shoulders"]
+    },
+    {
+      "name": "Cat, cow, child's pose sequence",
+      "time": 90,
+      "equipment": false,
+      "muscles": ["back"]
+    },
+    {
+      "name": "Wall-assisted single-arm chest stretch",
+      "time": 50,
+      "equipment": false,
+      "muscles": ["chest"]
+    },
+    {
+      "name": "Stability ball-assisted backbend",
+      "time": 50,
+      "equipment": true,
+      "muscles": ["abs"]
+    },
+    {
+      "name": "Supine figure-4 glute stretch",
+      "time": 50,
+      "equipment": false,
+      "muscles": ["glutes"]
+    },
+    {
+      "name": "Standing quad stretch",
+      "time": 50,
+      "equipment": false,
+      "muscles": ["quads"]
+    },
+    {
+      "name": "Standing hip flexor stretch",
+      "time": 50,
+      "equipment": false,
+      "muscles": ["hipflexors"]
+    },
+    {
+      "name": "Strap-assisted supine hamstring stretch",
+      "time": 50,
+      "equipment": true,
+      "muscles": ["hamstrings"]
+    },
+    {
+      "name": "Wall-assisted calf stretch",
+      "time": 50,
+      "equipment": false,
+      "muscles": ["calves"]
+    }
+  ]
 }

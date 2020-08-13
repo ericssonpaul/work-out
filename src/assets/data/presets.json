@@ -1,40 +1,76 @@
 {
   "presets": [
     {
-      "name": "Tennis"
+      "name": "Tennis",
+      "config": {
+        "muscles": ["shoulders", "biceps", "triceps", "forearms", "chest", "hamstrings", "calves", "glutes", "abs"]
+      }
     },
     {
-      "name": "Football"
+      "name": "Football",
+      "config": {
+
+      }
     },
     {
-      "name": "Sprinting"
+      "name": "Sprinting",
+      "config": {
+
+      }
     },
     {
-      "name": "Golf"
+      "name": "Golf",
+      "config": {
+
+      }
     },
     {
-      "name": "Basketball"
+      "name": "Basketball",
+      "config": {
+
+      }
     },
     {
-      "name": "Field Hockey"
+      "name": "Field Hockey",
+      "config": {
+
+      }
     },
     {
-      "name": "Cricket"
+      "name": "Cricket",
+      "config": {
+
+      }
     },
     {
-      "name": "Volleyball"
+      "name": "Volleyball",
+      "config": {
+
+      }
     },
     {
-      "name": "Table Tennis"
+      "name": "Table Tennis",
+      "config": {
+
+      }
     },
     {
-      "name": "Boxing"
+      "name": "Boxing",
+      "config": {
+
+      }
     },
     {
-      "name": "Rugby"
+      "name": "Rugby",
+      "config": {
+
+      }
     },
     {
-      "name": "Skiing"
+      "name": "Cycling",
+      "config": {
+
+      }
     }
   ]
 }

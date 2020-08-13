@@ -5,7 +5,7 @@
 
     <div id="start-form-container">
       <div style="width: 100%;">
-        <button class="event-button event-button-large" v-on:click="$emit('cc-update', 'sdadw')"><b>{{ button_start }}</b></button>
+        <eventButton @click="$emit('cc-update', 'qform')" :message="button_start"></eventButton>
       </div>
       <div style="width: 100%;">
         <p style="margin: 20px;">{{ template_choose_msg }}</p>
@@ -13,7 +13,7 @@
       <div class="preset-group-container">
         <div class="preset-group">
           <div v-for="preset in getRandomPresets(4)" :value="preset" class="preset-option">
-            <button class="event-button event-button-small floated">{{ preset.name }}</button>
+            <optionButton :message="preset.name" @click="loadPreset(preset)"></optionButton>
           </div>
         </div>
       </div>
@@ -22,8 +22,11 @@
 </template>
 
 <script>
+import eventButton from './event-button'
+import optionButton from './option-button'
 // We load the different presets from a json file
 import presets from '../assets/data/presets.json'
+import exercises from '../assets/data/exercises.json'
 
 export default {
   name: 'welcome',
@@ -32,8 +35,7 @@ export default {
       welcome_msg: 'WORK-OUT — YOUR PERSONAL TRAINING GUIDE',
       tagline_msg: 'GET PERSONALIZED WARMUP AND STRETCHING EXERCISES',
       button_start: 'FIND MY PERFECT WARMUP',
-      template_choose_msg: 'OR CHOOSE A PRESET',
-      wo_config: {}
+      template_choose_msg: 'OR CHOOSE A PRESET'
     }
   },
   methods: {
@@ -42,7 +44,16 @@ export default {
     //         But for this specific task, it's not that important and it would take more time that it was worth to implement a better algoritm like Fisher-Yates.
     getRandomPresets: function (num) {
       return presets.presets.sort(function (a, b) { return 0.5 - Math.random() }).slice(0, num)
+    },
+    loadPreset: function (preset) {
+      preset.config.muscles_checked = exercises.muscles
+      this.$emit('conf-update', preset.config)
+      this.$emit('cc-update', 'qform')
     }
+  },
+  components: {
+    eventButton,
+    optionButton
   }
 }
 </script>
@@ -62,28 +73,6 @@ h1 {
   display: inline-block;
   margin: 0 auto;
 }
-.event-button {
-  display: inline block;
-  background-color: transparent;
-  border: 2px solid black;
-  border-color: #ffffff;
-  border-radius: 20px;
-  color: #ffffff;
-  transition: 0.2s;
-}
-.event-button:hover {
-  color: #353535;
-  background-color: #ffffff;
-  border-color: #ffffff;
-}
-.event-button:active {
-  color: #353535;
-  background-color: #e9e9e9;
-  border-color: #e9e9e9;
-}
-.floated {
-  float: left;
-}
 
 @media screen and (max-width: 1023px) {
   #start-form-container {
@@ -96,15 +85,6 @@ h1 {
   h2 {
     font-size: 20px;
   }
-  .event-button-large {
-    font-size: 20px;
-    padding: 15px 30px 15px 30px;
-  }
-  .event-button-small {
-    font-size: 20px;
-    padding: 10px 20px 10px 20px;
-    margin: 5px 20px 5px 25px;
-  }
   p {
     font-size: 15px;
   }
@@ -116,15 +96,6 @@ h1 {
 @media screen and (min-width: 1024px) {
   #start-form-container {
     padding-top: 100px;
-  }
-  .event-button-large {
-    font-size: 30px;
-    padding: 25px 40px 25px 40px;
-  }
-  .event-button-small {
-    font-size: 25px;
-    padding: 15px 30px 15px 30px;
-    margin: 10px;
   }
   .preset-group-container {
     margin-left: 2px;

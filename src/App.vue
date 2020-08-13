@@ -4,8 +4,8 @@
     <navbar></navbar>
     <main>
       <!-- The main content, defined by 'contentComponent' and changed as needed -->
-      <transition appear name="fade">
-        <component v-bind:is="contentComponent" @cc-update="updateContentComponent"></component>
+      <transition appear name="fade" mode="out-in">
+        <component v-bind:is="contentComponent" @cc-update="updateContentComponent" @conf-update="updateConfig" :wo_config="wo_config"></component>
       </transition>
       <!-- Footer (CC 2020, GitHub etc) -->
       <footersm></footersm>
@@ -16,6 +16,7 @@
 <script>
 // Here are the primary content components (those that 'contentComponent' can be set to)
 import welcome from './components/welcome'
+import qform from './components/qform'
 
 // Generic components
 import navbar from './components/navbar'
@@ -25,11 +26,16 @@ export default {
   name: 'app',
   data () {
     return {
-      contentComponent: 'welcome' // The welcome screen is our initial component
+      contentComponent: 'welcome', // The welcome screen is our initial component
+      wo_config: {
+        muscles: [],
+        muscles_checked: []
+      }
     }
   },
   components: {
     welcome,
+    qform,
     navbar,
     footersm
   },
@@ -38,6 +44,9 @@ export default {
     // For example, the welcome component calls this function when the user presses on one of the buttons
     updateContentComponent: function (value) {
       this.contentComponent = value
+    },
+    updateConfig: function (value) {
+      this.wo_config = value
     }
   }
 }
@@ -64,7 +73,7 @@ body {
 main {
   text-align: center;
   margin-top: 0px;
-  height: calc(100% - 65px);
+  min-height: calc(100% - 65px);
   background: rgb(24,209,0);
   background: linear-gradient(90deg, rgba(24,209,0,1) 0%, rgba(0,212,255,1) 100%);
 }

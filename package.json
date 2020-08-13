@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Work-Out is a Vue.js CRUD app for recommending different training exercises",
   "author": "Jacob Paul <jacob_paul@outlook.com>",
+  "license": "MIT",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
