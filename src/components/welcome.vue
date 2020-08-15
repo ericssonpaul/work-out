@@ -33,7 +33,7 @@ export default {
   data () {
     return {
       welcome_msg: 'WORK-OUT — YOUR PERSONAL TRAINING GUIDE',
-      tagline_msg: 'GET PERSONALIZED WARMUP AND STRETCHING EXERCISES',
+      tagline_msg: 'GET PERSONALIZED STRETCHING EXERCISES',
       button_start: 'FIND MY PERFECT WARMUP',
       template_choose_msg: 'OR CHOOSE A PRESET'
     }
@@ -45,6 +45,7 @@ export default {
     getRandomPresets: function (num) {
       return presets.presets.sort(function (a, b) { return 0.5 - Math.random() }).slice(0, num)
     },
+    // Update config with the preset specified and change contentComponent to qform
     loadPreset: function (preset) {
       preset.config.muscles_checked = exercises.muscles
       this.$emit('conf-update', preset.config)

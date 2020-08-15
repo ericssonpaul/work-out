@@ -1,7 +1,8 @@
 # work-out
 
-Work-Out is a Vue.js CRUD app for recommending different training exercises.
+Work-Out is a Vue.js webapp for recommending different training exercises.
 It is completely frontend-based, with no back end.
+Note that although I hope it is useful, it's primarily a showcase Vue.js app for my portfolio.
 
 ## Building
 

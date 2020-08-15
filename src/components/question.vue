@@ -44,12 +44,14 @@ export default {
     eventButton
   },
   methods: {
+    // Called when the user click on any option button
     onOptionClick: function (option) {
-      if (this.options.type === 'y/n') {
-        this.$emit('ret', option.slice(0, 1).toLower())
-      } else if (this.options.type === 'choice') {
+      if (this.options.type === 'choice' || this.options.type === 'y/n') {
+        // If question type is y/n or single choice, then we're done here: just emit back to the parent what the user clicked
         this.$emit('ret', option)
       } else {
+        // If the question type is multichoice, then it's a different story.
+        // We either append or remove the option the user toggled to the multichoice_pressed array
         if (!this.multichoice_pressed.includes(option)) {
           this.multichoice_pressed.push(option)
         } else {
@@ -57,7 +59,9 @@ export default {
         }
       }
     },
+    // Called when the user clicks on the "Next" button only present if the question type is multichoice
     onMultichoiceNextClick: function () {
+      // Just emit back to the parent which options were toggled
       this.$emit('ret', this.multichoice_pressed)
       this.multichoice_pressed = []
     }

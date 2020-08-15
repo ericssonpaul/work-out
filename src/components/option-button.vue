@@ -12,10 +12,13 @@ export default {
     }
   },
   methods: {
+    // Called if the user clicks on the button
     onClick: function () {
       if (this.selectable === true) {
+        // If the buttion is of type selectable - make the button look pressed (by assigning the class 'active' to the button)
         this.active = !this.active
       }
+      // Emit to parent that the button was clicked
       this.$emit('click')
     }
   }

@@ -17,6 +17,7 @@
 // Here are the primary content components (those that 'contentComponent' can be set to)
 import welcome from './components/welcome'
 import qform from './components/qform'
+import result from './components/result'
 
 // Generic components
 import navbar from './components/navbar'
@@ -36,6 +37,7 @@ export default {
   components: {
     welcome,
     qform,
+    result,
     navbar,
     footersm
   },

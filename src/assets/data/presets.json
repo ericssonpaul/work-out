@@ -9,67 +9,61 @@
     {
       "name": "Football",
       "config": {
-
+        "muscles": ["hamstrings", "quads", "calves", "hipflexors", "glutes", "abs"]
       }
     },
     {
       "name": "Sprinting",
       "config": {
-
+        "muscles": ["quads", "hamstrings", "hipflexors", "glutes"]
       }
     },
     {
       "name": "Golf",
       "config": {
-
+        "muscles": ["shoulders", "chest", "back", "biceps", "triceps", "forearms", "glutes", "abs", "quads"]
       }
     },
     {
       "name": "Basketball",
       "config": {
-
+        "muscles": ["quads", "calves", "hamstrings", "glutes", "shoulders", "chest", "back", "biceps", "triceps", "forearms"]
       }
     },
     {
       "name": "Field Hockey",
       "config": {
-
+        "muscles": ["quads", "hamstrings", "hipflexors", "shoulders", "biceps", "glutes", "forearms", "triceps"]
       }
     },
     {
       "name": "Cricket",
       "config": {
-
+        "muscles": ["shoulders", "chest", "back", "triceps", "biceps", "forearms", "abs", "quads", "hamstrings", "hipflexors"]
       }
     },
     {
       "name": "Volleyball",
       "config": {
-
+        "muscles": ["shoulders", "back", "chest", "forearms", "glutes", "quads", "hamstrings", "abs", "hipflexors"]
       }
     },
     {
       "name": "Table Tennis",
       "config": {
-
+        "muscles": ["biceps", "triceps", "shoulders", "glutes", "calves", "hamstrings", "hipflexors"]
       }
     },
     {
       "name": "Boxing",
       "config": {
-
-      }
-    },
-    {
-      "name": "Rugby",
-      "config": {
-
+        "muscles": ["shoulders", "abs", "quads", "hamstrings", "glutes", "neck"]
       }
     },
     {
       "name": "Cycling",
       "config": {
-
+        "muscles": ["quads", "hamstrings", "glutes", "abs", "back", "chest"]
       }
     }
   ]
